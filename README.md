@@ -124,7 +124,7 @@ time opt-baselines --model-size 125m --benchmark -t 1 -g 8 -n 128 -p test-125m -
 
 If on the SLURM log-in node:
 
-``bash
+```bash
 time opt-baselines --model-size 125m --benchmark -t 1 -g 8 -n 128 -p test-125m --local --azure
 ```
 
