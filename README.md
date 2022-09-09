@@ -11,8 +11,7 @@ Scripts to benchmark training of OPT-175B on a CycleCloud SLURM cluster.
 
 ### 0. [If on a SLURM cluster] Connect to the worker node
 
- ssh <private-ip>
- cyclecloud connect <node-name> -c <cluster-name>
+Connect using preferred method, e.g. `ssh <private-ip>` or `cyclecloud connect <node-name> -c <cluster-name>`
 
 ### 1. Install software requirements
 
@@ -125,7 +124,7 @@ time opt-baselines --model-size 125m --benchmark -t 1 -g 8 -n 128 -p test-125m -
 If on the SLURM log-in node:
 
 ```bash
-time opt-baselines --model-size 125m --benchmark -t 1 -g 8 -n 128 -p test-125m --local --azure
+time opt-baselines --model-size 125m --benchmark -t 1 -g 8 -n 128 -p test-125m --azure
 ```
 
 On a single instance of a signle Standard_ND96amsr_A100_v4 VM this took ~2.5 minutes with WPS of at least 200K.
