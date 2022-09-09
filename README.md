@@ -77,13 +77,13 @@ make clean && make -j src.build
 popd
 ```
 
-#### Load envvar
+#### 1e. Load environmental variables
 
 ```bash
-source .envrc
+source envrc
 ```
 
-#### Install Metaseq
+#### 1f. Install Metaseq
 
 Ensure version includes commit a1a4e733.
 
@@ -96,7 +96,7 @@ pip install -e .
 popd
 ```
 
-#### Install Fairscale
+#### 1g. Install Fairscale
 
 Note, this install via pip is not editable (i.e. no `-e`) as the `metaseq/train.py` checks the `fairscale` version which will not be defined if installed in editable mode.
 
