@@ -1,4 +1,4 @@
-# Benchmark OPT-175B 
+# Benchmark OPT-175B
 
 Scripts to benchmark training of OPT-175B on a CycleCloud SLURM cluster.
 
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 Install Apex for utilities for mixed precision and distributed training optimizations.
 
-``bash
+```bash
 git clone https://github.com/NVIDIA/apex
 pushd apex
 sed -i "s/(bare_metal_major != torch_binary_major) or (bare_metal_minor != torch_binary_minor)/False/g" setup.py
@@ -105,7 +105,7 @@ git clone https://github.com/facebookresearch/fairscale.git
 pushd fairscale
 git checkout fixing_memory_issues_with_keeping_overla
 pip install .
-popd 
+popd
 ```
 
 ### 2. Run benchmark
