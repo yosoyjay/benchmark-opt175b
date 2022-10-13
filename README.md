@@ -9,7 +9,7 @@ Scripts to benchmark training of OPT-175B on a CycleCloud SLURM cluster.
 
 ## Running the benchmark
 
-### 0. [If on a SLURM cluster] Connect to the worker node
+### 0. (If on a SLURM cluster) Connect to the worker node to have access to GPU + compiler
 
 Connect using preferred method, e.g. `ssh <private-ip>` or `cyclecloud connect <node-name> -c <cluster-name>`
 
