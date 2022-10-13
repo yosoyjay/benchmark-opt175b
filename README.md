@@ -118,13 +118,13 @@ micromamba activate fairseq
 If on a stand-alone VM:
 
 ```bash
-time opt-baselines --model-size 125m --benchmark -t 1 -g 8 -n 128 -p test-125m --local --azure
+time opt-baselines --model-size 125m --benchmark -t 1 -g 8 -n 1 -p test-125m --local --azure
 ```
 
 If on the SLURM log-in node:
 
 ```bash
-time opt-baselines --model-size 125m --benchmark -t 1 -g 8 -n 128 -p test-125m --azure
+python -m  metaseq.launcher.opt_baselines --model-size 125m --benchmark -t 1 -g 1 -n 128 -p test-125m --azure
 ```
 
 On a single instance of a signle Standard_ND96amsr_A100_v4 VM this took ~2.5 minutes with WPS of at least 200K.
