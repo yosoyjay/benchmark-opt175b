@@ -8,14 +8,12 @@ set -o pipefail
 # These envvars are used eventually
 source .envrc
 
-INSTALL_DIR=${INSTALL_DIR-'/shared/home/hpcadmin'}
 SRC_DIR=`readlink -f .`
 
-printf "Downloading and installing software in ${INSTALL_DIR}"
-pushd $INSTALL_DIR
+printf "Downloading and installing software in ${SRC_DIR}"
 
 printf "Installing Python requirements"
-pip install -r "${SRC_DIR}/requirements.txt"  -f https://download.pytorch.org/whl/torch_stable.html
+pip install -r requirements.txt  -f https://download.pytorch.org/whl/torch_stable.html
 
 printf "Installing Apex"
 git clone https://github.com/NVIDIA/apex
@@ -56,5 +54,3 @@ pushd fairscale
 git checkout fixing_memory_issues_with_keeping_overlap
 pip install .
 popd 
-
-popd
