@@ -5,9 +5,6 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-# These envvars are used eventually
-source .envrc
-
 SRC_DIR=`readlink -f .`
 
 printf "Downloading and installing software in ${SRC_DIR}"
@@ -36,8 +33,15 @@ popd
 printf "Installing Megatron fork"
 git clone https://github.com/ngoyal2707/Megatron-LM.git
 pushd Megatron-LM
-git checkout fairseq_v2
+git checkout fairseq_v3
 pip install -e .
+popd
+
+printf "Installing Fairscale"
+git clone https://github.com/facebookresearch/fairscale.git
+pushd fairscale
+git checkout fixing_memory_issues_with_keeping_overlap
+pip install .
 popd
 
 printf "Installing Metaseq"
@@ -48,9 +52,3 @@ python setup.py build_ext --inplace
 pip install -e .
 popd
 
-printf "Installing Fairscale"
-git clone https://github.com/facebookresearch/fairscale.git
-pushd fairscale
-git checkout fixing_memory_issues_with_keeping_overlap
-pip install .
-popd 
